@@ -86,6 +86,7 @@ This system requires postgres and php >= 7.3.
    ```sh
    composer install
    php artisan migrate
+   php arisan key:gen
    ```  
 4. Start dev server
    ```sh

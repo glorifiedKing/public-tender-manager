@@ -19,16 +19,16 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 Route::group(['prefix' => 'user', 'as' => 'user.'],function(){
-    Route::post('register','App\Http\Controllers\Api\UsersController@register');
-    Route::post('getToken','App\Http\Controllers\Api\UsersController@authenticate');
-    Route::post('logout','App\Http\Controllers\Api\UsersController@revoke_tokens');
+    Route::post('register','App\Http\Controllers\Api\UsersController@register')->name('register');
+    Route::post('getToken','App\Http\Controllers\Api\UsersController@authenticate')->name('get.token');
+    Route::post('logout','App\Http\Controllers\Api\UsersController@revoke_tokens')->name('logout');
 
 });
 
 Route::group(['prefix' => 'contracts','middleware'=>'auth:sanctum','as'=>'contracts.'],function(){
-    Route::post('uploadContracts','App\Http\Controllers\Api\ContractsController@upload_contract');
-    Route::post('getUploadStatus','App\Http\Controllers\Api\ContractsController@get_upload_progress');
-    Route::get('getContract/{id}','App\Http\Controllers\Api\ContractsController@get_contract');
-    Route::get('getContractReadStatus/{id}','App\Http\Controllers\Api\ContractsController@get_contract_read_status');
-    Route::post('searchContracts','App\Http\Controllers\Api\ContractsController@search_contracts');
+    Route::post('uploadContracts','App\Http\Controllers\Api\ContractsController@upload_contract')->name('upload.contracts');
+    Route::post('getUploadStatus','App\Http\Controllers\Api\ContractsController@get_upload_progress')->name('upload.status');
+    Route::get('getContract/{id}','App\Http\Controllers\Api\ContractsController@get_contract')->name('get.contract');
+    Route::get('getContractReadStatus/{id}','App\Http\Controllers\Api\ContractsController@get_contract_read_status')->name('get.contract.read');
+    Route::post('searchContracts','App\Http\Controllers\Api\ContractsController@search_contracts')->name('search.contracts');
 });
