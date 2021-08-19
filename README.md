@@ -92,7 +92,7 @@ This system requires postgres and php >= 7.3.
    ```sh
    php artisan serve
    ```      
-5. Start laravel queue `config.js`
+5. Start laravel queue 
    ```sh
    php artisan queue:work
    ```
