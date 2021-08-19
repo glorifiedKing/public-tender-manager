@@ -98,7 +98,7 @@ This system requires postgres and php >= 7.3.
    ```
 6. Access Api documentation (OPEN API) link
    ```
-   The default link is at https://localhost:8000/api/documentation
+   The default link is at http://localhost:8000/api/documentation
    
    ```   
 
